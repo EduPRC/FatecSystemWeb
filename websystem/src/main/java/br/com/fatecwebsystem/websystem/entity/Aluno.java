@@ -6,16 +6,9 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+
 
 @Entity
-@NoArgsConstructor
-@AllArgsConstructor
-@Getter
-@Setter
 public class Aluno {
 
     @Id
@@ -37,5 +30,63 @@ public class Aluno {
     @Column(nullable = false, length = 11)
     private Integer raAluno;
 
-    
+    public Aluno() {
+    }
+
+    public Aluno(Integer idAluno, String nomeAluno, String enderecoAluno, String telefoneAluno, String cpfAluno, Integer raAluno) {
+        this.idAluno = idAluno;
+        this.nomeAluno = nomeAluno;
+        this.enderecoAluno = enderecoAluno;
+        this.telefoneAluno = telefoneAluno;
+        this.cpfAluno = cpfAluno;
+        this.raAluno = raAluno;
+    }
+
+    public Integer getIdAluno() {
+        return idAluno;
+    }
+
+    public void setIdAluno(Integer idAluno) {
+        this.idAluno = idAluno;
+    }
+
+    public String getNomeAluno() {
+        return nomeAluno;
+    }
+
+    public void setNomeAluno(String nomeAluno) {
+        this.nomeAluno = nomeAluno;
+    }
+
+    public String getEnderecoAluno() {
+        return enderecoAluno;
+    }
+
+    public void setEnderecoAluno(String enderecoAluno) {
+        this.enderecoAluno = enderecoAluno;
+    }
+
+    public String getTelefoneAluno() {
+        return telefoneAluno;
+    }
+
+    public void setTelefoneAluno(String telefoneAluno) {
+        this.telefoneAluno = telefoneAluno;
+    }
+
+    public String getCpfAluno() {
+        return cpfAluno;
+    }
+
+    public void setCpfAluno(String cpfAluno) {
+        this.cpfAluno = cpfAluno;
+    }
+
+    public Integer getRaAluno() {
+        return raAluno;
+    }
+
+    public void setRaAluno(Integer raAluno) {
+        this.raAluno = raAluno;
+    }
 }

@@ -30,9 +30,8 @@
                 <td th:text="${aluno.cpfAluno}"></td>
                 <td th:text="${aluno.raAluno}"></td>
                 <td>
-                    <a th:href="@{/alunos/editar/{id}(id=${aluno.idAluno})}">Editar</a> |
-                    <a th:href="@{/alunos/excluir/{id}(id=${aluno.idAluno})}" 
-                       onclick="return confirm('Tem certeza que deseja excluir este aluno?');">Excluir</a>
+                    <a th:href="@{/alunos/atualizar/{id}(id=${aluno.idAluno})}">Atualizar</a> |
+                    <a th:href="@{/alunos/excluir/{id}(id=${aluno.idAluno})}">Excluir</a>
                 </td>
                 
             </tr>

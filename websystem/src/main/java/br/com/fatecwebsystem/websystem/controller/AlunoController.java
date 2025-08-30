@@ -5,13 +5,10 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 
 import br.com.fatecwebsystem.websystem.entity.Aluno;
 import br.com.fatecwebsystem.websystem.service.AlunoService;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
 
 
 @Controller
@@ -40,5 +37,18 @@ public class AlunoController {
         return "aluno/listaAluno";
     }
     
+    @GetMapping("/excluir/{id}")
+    public String deletar(@PathVariable Integer id) {
+        alunoService.deleteAluno(id);
+        return "redirect:/alunos/listar";
+    }
+
+    @GetMapping("/atualizar/{id}")
+    public String atualizar(@PathVariable Integer id, Model model){
+        Aluno aluno = alunoService.findById(id);
+        model.addAttribute("aluno", aluno);
+        return "aluno/formularioAluno";
+    }
+
 
 }
